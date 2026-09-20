@@ -152,7 +152,7 @@ dividing by what you managed to trade is how a 29% fill comes to look like a
 good day.
 
 `total_bps` is computed independently of the three parts so that
-`tests/test_shortfall.py` can assert they sum to it across 600 parameter
+`tests/test_shortfall.py` can assert they sum to it across 270 parameter
 combinations rather than assert an identity the code was written to satisfy.
 
 ## Layout
