@@ -11,7 +11,7 @@ network access anywhere in the code, and nothing proprietary.
 ## Quickstart
 
 ```
-git clone <this repo> && cd slippage-lab
+git clone https://github.com/CharlieSinha00/slippage-lab && cd slippage-lab
 uv run slippage-lab
 ```
 
