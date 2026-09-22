@@ -75,9 +75,13 @@ trending market the shares you did not get are the entire story.
 
 The divergence is not a property of this seed. Across seeds 0-23 on the default
 scenario the two benchmarks pick different winners 22 times; `front_loaded` is
-the shortfall winner in all 22. The two exceptions (seeds 7 and 23) are quiet
-sessions where the limit barely binds, every schedule fills, and -- see below --
-the benchmarks then *cannot* disagree.
+the shortfall winner in all 22. At the two exceptions, seeds 7 and 23, they
+happen to agree: `front_loaded` wins both. Those are not the case the theorem
+below describes. The limit still binds hard at both -- at seed 7 the even
+schedule fills 48% and the volume-proportional one 45%, and at seed 23, 28% and
+39% -- so completion still differs, and the theorem's conditions are not met.
+They agree because `front_loaded` is far enough ahead on both measures that
+nothing else reverses it.
 
 ## When the two benchmarks must agree
 
@@ -89,7 +93,11 @@ disagreement precisely: it lives in **completion** and in **choice of interval**
 not in the price you paid.
 
 `uv run slippage-lab --no-limit` removes the limit price so that everything
-fills, and the report says so:
+fills. Read what that does and does not do: it removes **completion** as a
+source of disagreement, and leaves **interval choice** in place, because the
+three schedules still finish at different times and are still graded over
+different stretches of tape. So this is not a demonstration of the theorem --
+its conditions are still unmet. It is the second mechanism, isolated:
 
 ```
                fill % part %   avg px vwap slip bps IS total bps   delay   exec   opp  filled
